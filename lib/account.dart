@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mak_b/bottom_navigation_bar/account_nav.dart';
-import 'package:mak_b/bottom_navigation_bar/cart_nav.dart';
-import 'package:mak_b/bottom_navigation_bar/product_nav.dart';
+import 'package:mak_b/pages/cart_page.dart';
+import 'package:mak_b/pages/product_page.dart';
 import 'package:mak_b/variables/constants.dart';
 import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
 
@@ -15,6 +15,7 @@ class Account extends StatefulWidget {
 
 class _AccountState extends State<Account> with TickerProviderStateMixin {
   TabController? _tabController;
+  String _pageTitle = 'Account';
 
   @override
   void initState() {
@@ -37,6 +38,22 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
+      // appBar: AppBar(
+      //   backgroundColor: kPrimaryLightColor,
+      //   leading: IconButton(
+      //     onPressed: () {
+      //       Navigator.pop(context);
+      //     },
+      //     icon: Icon(Icons.arrow_back, color: Colors.white),
+      //   ),
+      //   title: Text(
+      //     _pageTitle,
+      //     style: TextStyle(
+      //         color: Colors.white,
+      //         fontSize: size.width * .05,
+      //         fontWeight: FontWeight.w500),
+      //   ),
+      // ),
       backgroundColor: Colors.green[50],
       bottomNavigationBar: MotionTabBar(
         initialSelectedTab: 'Account',
@@ -62,15 +79,18 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
         onTabItemSelected: (int value) {
           setState(() {
             _tabController!.index = value;
+            value == 0
+                ? _pageTitle = 'Product'
+                : value == 1
+                    ? _pageTitle = 'Account'
+                    : _pageTitle = 'Cart';
           });
         },
       ),
       body: TabBarView(
-        physics:
-            NeverScrollableScrollPhysics(), // swipe navigation handling is not supported
+        physics: NeverScrollableScrollPhysics(),
         controller: _tabController,
-        // ignore: prefer_const_literals_to_create_immutables
-        children: <Widget>[ProductNav(), AccountNav(), CartNav()],
+        children: <Widget>[ProductPage(), AccountNav(), CartPage()],
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mak_b/models/Product.dart';
-import 'package:mak_b/variables/button_widget.dart';
+
 import 'package:mak_b/variables/constants.dart';
 import 'package:mak_b/variables/size_config.dart';
 
@@ -12,11 +12,11 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size=MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.only(left: getProportionateScreenWidth(context,10)),
+      padding: EdgeInsets.only(left: getProportionateScreenWidth(context, 10)),
       child: SizedBox(
-        width: getProportionateScreenWidth(context,140),
+        width: getProportionateScreenWidth(context, 140),
         child: GestureDetector(
           // onTap: () => Navigator.pushNamed(
           //   context,
@@ -40,7 +40,8 @@ class ProductCard extends StatelessWidget {
                         AspectRatio(
                           aspectRatio: 1.02,
                           child: Container(
-                            padding: EdgeInsets.all(getProportionateScreenWidth(context,20)),
+                            padding: EdgeInsets.all(
+                                getProportionateScreenWidth(context, 20)),
                             decoration: BoxDecoration(
                               color: kSecondaryColor.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(15),
@@ -52,14 +53,17 @@ class ProductCard extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top:2.0,right: 2.0),
-                          child: Icon(Icons.add_circle_outline,color: kPrimaryColor,),
+                          padding: const EdgeInsets.only(top: 2.0, right: 2.0),
+                          child: Icon(
+                            Icons.add_circle_outline,
+                            color: kPrimaryColor,
+                          ),
                         )
                       ],
                     ),
                     const SizedBox(height: 10),
                     Padding(
-                      padding: const EdgeInsets.only(right:12.0,left: 3),
+                      padding: const EdgeInsets.only(right: 12.0, left: 3),
                       child: Text(
                         product.title,
                         style: TextStyle(color: Colors.black),
@@ -67,25 +71,29 @@ class ProductCard extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right:12.0,left: 3),
+                      padding: const EdgeInsets.only(right: 12.0, left: 3),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
                             "\$${product.price}",
                             style: TextStyle(
-                              fontSize: getProportionateScreenWidth(context,15),
+                              fontSize:
+                                  getProportionateScreenWidth(context, 15),
                               fontWeight: FontWeight.w500,
                               color: kPrimaryColor,
                             ),
                           ),
-                          SizedBox(width: 5,),
+                          SizedBox(
+                            width: 5,
+                          ),
                           Text(
                             "\$${product.price}",
                             style: TextStyle(
                               decoration: TextDecoration.lineThrough,
-                              fontSize: getProportionateScreenWidth(context,12),
-                              fontWeight:  FontWeight.w300,
+                              fontSize:
+                                  getProportionateScreenWidth(context, 12),
+                              fontWeight: FontWeight.w300,
                               color: Colors.grey[600],
                             ),
                           ),
