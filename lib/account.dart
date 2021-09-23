@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mak_b/bottom_navigation_bar/account_nav.dart';
-import 'package:mak_b/pages/cart_page.dart';
-import 'package:mak_b/pages/product_page.dart';
+import 'package:mak_b/bottom_navigation_bar/cart_page.dart';
+import 'package:mak_b/bottom_navigation_bar/product_page.dart';
 import 'package:mak_b/variables/constants.dart';
 import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
 
