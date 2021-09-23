@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mak_b/pages/login_page.dart';
 import 'package:mak_b/bottom_navigation_bar/product_page.dart';
+import 'package:mak_b/pages/register_page.dart';
 import 'package:mak_b/variables/theme.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mak B',
       theme: theme(),
-      home: ProductPage(),
+      home: RegisterPage(),
     );
   }
 }

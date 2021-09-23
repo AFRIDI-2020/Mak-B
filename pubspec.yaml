@@ -27,6 +27,7 @@ dependencies:
   flutter_svg:
   motion_tab_bar_v2:
   font_awesome_flutter:
+  
 #flutter_shimmer: ^2.1.1
 
 

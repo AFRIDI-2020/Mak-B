@@ -147,8 +147,8 @@ class _AccountNavState extends State<AccountNav> {
         SizedBox(height: size.width * .38),
         Padding(
           padding: EdgeInsets.only(
-              left: size.width * .04,
-              right: size.width * .04,
+              left: size.width * .06,
+              right: size.width * .06,
               top: size.width * .04),
           child: Card(
             elevation: 2,
