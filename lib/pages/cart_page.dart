@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mak_b/account.dart';
 import 'package:mak_b/models/Cart.dart';
-import 'package:mak_b/variables/button_widget.dart';
+
 import 'package:mak_b/variables/size_config.dart';
 import 'package:mak_b/widgets/cart_card.dart';
+import 'package:mak_b/widgets/gradient_button.dart';
 
 class CartPage extends StatefulWidget {
   @override
@@ -29,6 +30,12 @@ class _CartPageState extends State<CartPage> {
                 style: Theme.of(context).textTheme.caption,
               ),
             ],
+          ),
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back),
           ),
         ),
         body: Padding(
@@ -108,25 +115,21 @@ class _CartPageState extends State<CartPage> {
                         ],
                       ),
                     ),
-                    SizedBox(
-                      width: getProportionateScreenWidth(context, 190),
-                      child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Account()));
-                          },
-                          child: Text('button')),
-                      // child: GradientButton(
-                      //   onPressed: () {
-
-                      //   },
-                      //   height: size.height*.07,
-                      //   width: size.width,
-                      //   message: "Buy Now",
-                      // ),
-                    ),
+                    GradientButton(
+                        child: Text(
+                          'Buy Now',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Account()));
+                        },
+                        borderRadius: 5.0,
+                        height: size.width * .1,
+                        width: size.width * .25,
+                        gradientColors: [Color(0xFF0198DD), Color(0xFF19B52B)])
                   ],
                 ),
               ],
