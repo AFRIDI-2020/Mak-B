@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mak_b/pages/insaurance.dart';
+import 'package:mak_b/pages/refferred_people.dart';
 
 class AccountNav extends StatefulWidget {
   const AccountNav({Key? key}) : super(key: key);
@@ -263,6 +265,10 @@ class _AccountNavState extends State<AccountNav> {
         ),
         SizedBox(height: size.width * .02),
         ListTile(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => RefferredPeople()));
+          },
           leading: Icon(Icons.people),
           title: Text(
             'Refferred People',
@@ -299,6 +305,10 @@ class _AccountNavState extends State<AccountNav> {
           ),
         ),
         ListTile(
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Insaurance()));
+          },
           leading: Icon(Icons.account_balance_wallet),
           title: Text(
             'Insaurance',
